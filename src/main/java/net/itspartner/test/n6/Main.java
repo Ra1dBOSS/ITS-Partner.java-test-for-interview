@@ -17,6 +17,24 @@ package net.itspartner.test.n6;
  */
 public class Main {
 
+    public static boolean passwordCheck(String password) {
+
+        boolean f = false;
+        int k = 0;
+        if (password.length() < 8)
+            return false;
+        for (int i = 0; i<password.length(); i++) {
+            if (("A" <= password[i]) && (password[i] <= "Z"))
+                k++;
+            if (!f && ((password[i] == "#") || (password[i] == "-") || (password[i] == "@")))
+                f = true;
+            }
+        }
+        if ((k == 1) && f)
+            return true;
+        return false;
+    }
+
     public static void main(String[] args) {
 
     }
