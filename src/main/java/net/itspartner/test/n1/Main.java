@@ -35,7 +35,16 @@ public class Main {
     }
 
     private static Node<Integer> reverse(Node<Integer> head) {
-        // TODO implement
-        return null;
+
+        Node<Integer> retNode = null;
+        Node<Integer> curNode = head;
+        while (curNode != null) {
+            Node<Integer> cur = curNode;
+            curNode = curNode.getNextNode();
+            cur.setNextNode(retNode);
+            retNode = cur;
+        }
+
+        return retNode;
     }
 }
